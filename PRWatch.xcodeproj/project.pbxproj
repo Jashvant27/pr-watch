@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2B15A8CD4A232D41CB3D41A4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3894AB2E8E979ADDC6A113A /* Model.swift */; };
+		46E3103563CFCF80FEECED37 /* GitHubClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2BF04F0C93E19EA44FB43E /* GitHubClient.swift */; };
+		489E77E4CD2C0001680680F4 /* PRWatchWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2922DB1885F44604F644F83 /* PRWatchWidget.swift */; };
+		5500163DF720FD8C12EC586B /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08B07C7E5E7F11B6C5D2B66 /* AppModel.swift */; };
+		79F01F22E8F6EFC014FB56B8 /* PRWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD1CE850E69C142F6636C43 /* PRWatchApp.swift */; };
+		7DD7E94011FB3D45BB83891F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C511489EF1B1AF0078F47EDF /* Assets.xcassets */; };
+		8090DE73F2A4FFE7AECEF367 /* PRWatchWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 080AD9DF2CF70B6DB4F319EC /* PRWatchWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		83D1E9C4A9EC472A832C7958 /* TokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059E8BE7EAD190333D0F2B49 /* TokenStore.swift */; };
+		87693A56224F8AD3D55D974A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462071E862A0C28EF8C101D7 /* ContentView.swift */; };
+		A87E443BD49ADBB493F98285 /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525062D5B74FDC691128707 /* SharedStore.swift */; };
+		AAC4A4B1EDCC7429E9FC13E3 /* TokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059E8BE7EAD190333D0F2B49 /* TokenStore.swift */; };
+		C6E665322D0658936E59A5F3 /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525062D5B74FDC691128707 /* SharedStore.swift */; };
+		E200029CDB7A38B9857D4600 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3894AB2E8E979ADDC6A113A /* Model.swift */; };
+		F84FDBE44530E3D8ACC748A7 /* GitHubClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2BF04F0C93E19EA44FB43E /* GitHubClient.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3E0E989034F6F02088152505 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20D121A05A5F113C0C5A4A15 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C40A5E2C5AD295FBC286AD8A;
+			remoteInfo = PRWatchWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F380D527DD107C2B09D60784 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8090DE73F2A4FFE7AECEF367 /* PRWatchWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		059E8BE7EAD190333D0F2B49 /* TokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStore.swift; sourceTree = "<group>"; };
+		080AD9DF2CF70B6DB4F319EC /* PRWatchWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PRWatchWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D2BF04F0C93E19EA44FB43E /* GitHubClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubClient.swift; sourceTree = "<group>"; };
+		462071E862A0C28EF8C101D7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		48D7F001A7FB23AB548FEF00 /* PRWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PRWatch.entitlements; sourceTree = "<group>"; };
+		4CD1CE850E69C142F6636C43 /* PRWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRWatchApp.swift; sourceTree = "<group>"; };
+		52F818968C3FDCCD0EF62478 /* PRWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PRWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5697B4C6399625FBF0B23404 /* PRWatchWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PRWatchWidget.entitlements; sourceTree = "<group>"; };
+		A525062D5B74FDC691128707 /* SharedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStore.swift; sourceTree = "<group>"; };
+		C511489EF1B1AF0078F47EDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CCAC3D0A1B3253BDC0D8F52F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D2922DB1885F44604F644F83 /* PRWatchWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRWatchWidget.swift; sourceTree = "<group>"; };
+		D3894AB2E8E979ADDC6A113A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		DFC73475B4E07AA9EF6EE53A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E08B07C7E5E7F11B6C5D2B66 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		201372879BE62C66BAE4E368 /* PRWatch */ = {
+			isa = PBXGroup;
+			children = (
+				E08B07C7E5E7F11B6C5D2B66 /* AppModel.swift */,
+				C511489EF1B1AF0078F47EDF /* Assets.xcassets */,
+				462071E862A0C28EF8C101D7 /* ContentView.swift */,
+				DFC73475B4E07AA9EF6EE53A /* Info.plist */,
+				48D7F001A7FB23AB548FEF00 /* PRWatch.entitlements */,
+				4CD1CE850E69C142F6636C43 /* PRWatchApp.swift */,
+			);
+			path = PRWatch;
+			sourceTree = "<group>";
+		};
+		30B949ECC5C86CF384A90688 = {
+			isa = PBXGroup;
+			children = (
+				201372879BE62C66BAE4E368 /* PRWatch */,
+				7D806BF43F2BDA0A880F6945 /* PRWatchWidget */,
+				6169D5BDBA206BFE196F3E58 /* Shared */,
+				6F11BB2CCFDEBEDF40D36046 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6169D5BDBA206BFE196F3E58 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				0D2BF04F0C93E19EA44FB43E /* GitHubClient.swift */,
+				D3894AB2E8E979ADDC6A113A /* Model.swift */,
+				A525062D5B74FDC691128707 /* SharedStore.swift */,
+				059E8BE7EAD190333D0F2B49 /* TokenStore.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		6F11BB2CCFDEBEDF40D36046 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52F818968C3FDCCD0EF62478 /* PRWatch.app */,
+				080AD9DF2CF70B6DB4F319EC /* PRWatchWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7D806BF43F2BDA0A880F6945 /* PRWatchWidget */ = {
+			isa = PBXGroup;
+			children = (
+				CCAC3D0A1B3253BDC0D8F52F /* Info.plist */,
+				5697B4C6399625FBF0B23404 /* PRWatchWidget.entitlements */,
+				D2922DB1885F44604F644F83 /* PRWatchWidget.swift */,
+			);
+			path = PRWatchWidget;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		91B8A38FDF9F910B7ECCAF3F /* PRWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD14F3365CCF8B052AEBE727 /* Build configuration list for PBXNativeTarget "PRWatch" */;
+			buildPhases = (
+				3A9E1ACA79B7AEBF8DF605E7 /* Sources */,
+				970C3CF51DBE15E87C6ADBF8 /* Resources */,
+				F380D527DD107C2B09D60784 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F4E44D7C12482D7FA56B43AA /* PBXTargetDependency */,
+			);
+			name = PRWatch;
+			packageProductDependencies = (
+			);
+			productName = PRWatch;
+			productReference = 52F818968C3FDCCD0EF62478 /* PRWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C40A5E2C5AD295FBC286AD8A /* PRWatchWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E14465C0043E554CA114820 /* Build configuration list for PBXNativeTarget "PRWatchWidget" */;
+			buildPhases = (
+				1529960CCC18E8F0CA72936A /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PRWatchWidget;
+			packageProductDependencies = (
+			);
+			productName = PRWatchWidget;
+			productReference = 080AD9DF2CF70B6DB4F319EC /* PRWatchWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		20D121A05A5F113C0C5A4A15 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					91B8A38FDF9F910B7ECCAF3F = {
+						DevelopmentTeam = R9KR5T3WZB;
+						ProvisioningStyle = Automatic;
+					};
+					C40A5E2C5AD295FBC286AD8A = {
+						DevelopmentTeam = R9KR5T3WZB;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 77367A3C128394926A4BABAE /* Build configuration list for PBXProject "PRWatch" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 30B949ECC5C86CF384A90688;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 6F11BB2CCFDEBEDF40D36046 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				91B8A38FDF9F910B7ECCAF3F /* PRWatch */,
+				C40A5E2C5AD295FBC286AD8A /* PRWatchWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		970C3CF51DBE15E87C6ADBF8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DD7E94011FB3D45BB83891F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1529960CCC18E8F0CA72936A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F84FDBE44530E3D8ACC748A7 /* GitHubClient.swift in Sources */,
+				E200029CDB7A38B9857D4600 /* Model.swift in Sources */,
+				489E77E4CD2C0001680680F4 /* PRWatchWidget.swift in Sources */,
+				A87E443BD49ADBB493F98285 /* SharedStore.swift in Sources */,
+				AAC4A4B1EDCC7429E9FC13E3 /* TokenStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A9E1ACA79B7AEBF8DF605E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5500163DF720FD8C12EC586B /* AppModel.swift in Sources */,
+				87693A56224F8AD3D55D974A /* ContentView.swift in Sources */,
+				46E3103563CFCF80FEECED37 /* GitHubClient.swift in Sources */,
+				2B15A8CD4A232D41CB3D41A4 /* Model.swift in Sources */,
+				79F01F22E8F6EFC014FB56B8 /* PRWatchApp.swift in Sources */,
+				C6E665322D0658936E59A5F3 /* SharedStore.swift in Sources */,
+				83D1E9C4A9EC472A832C7958 /* TokenStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F4E44D7C12482D7FA56B43AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C40A5E2C5AD295FBC286AD8A /* PRWatchWidget */;
+			targetProxy = 3E0E989034F6F02088152505 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1AA57B74D495191A6A54C8A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PRWatch/PRWatch.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PRWatch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jashvantsewmangal.prwatch;
+				PRODUCT_NAME = "PR Watch";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		21A6425682358DF7075D5417 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PRWatchWidget/PRWatchWidget.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PRWatchWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jashvantsewmangal.prwatch.widget;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		707D99DB2CD03D7A125E80DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PRWatch/PRWatch.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PRWatch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jashvantsewmangal.prwatch;
+				PRODUCT_NAME = "PR Watch";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		91F8BFF7D4715A5DFC0A72D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = R9KR5T3WZB;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		C21F73EA978435F26D64F1EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = R9KR5T3WZB;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		DC81A2ED8987A9491E38BB38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PRWatchWidget/PRWatchWidget.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PRWatchWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jashvantsewmangal.prwatch.widget;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5E14465C0043E554CA114820 /* Build configuration list for PBXNativeTarget "PRWatchWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21A6425682358DF7075D5417 /* Debug */,
+				DC81A2ED8987A9491E38BB38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		77367A3C128394926A4BABAE /* Build configuration list for PBXProject "PRWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C21F73EA978435F26D64F1EE /* Debug */,
+				91F8BFF7D4715A5DFC0A72D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BD14F3365CCF8B052AEBE727 /* Build configuration list for PBXNativeTarget "PRWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AA57B74D495191A6A54C8A7 /* Debug */,
+				707D99DB2CD03D7A125E80DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 20D121A05A5F113C0C5A4A15 /* Project object */;
+}

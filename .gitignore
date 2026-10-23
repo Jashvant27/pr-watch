@@ -1,0 +1,8 @@
+.DS_Store
+xcuserdata/
+*.xcuserstate
+DerivedData/
+build/
+# The GitHub screenshot used as the design reference stays out; the icon preview is kept.
+Design/*
+!Design/icon-preview.png

@@ -1,0 +1,81 @@
+name: PRWatch
+options:
+  bundleIdPrefix: com.jashvantsewmangal
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    DEVELOPMENT_TEAM: R9KR5T3WZB
+    CODE_SIGN_STYLE: Automatic
+    SWIFT_VERSION: "5.9"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+    ENABLE_HARDENED_RUNTIME: YES
+    ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOL_EXTENSIONS: YES
+targets:
+  PRWatch:
+    type: application
+    platform: macOS
+    sources:
+      - PRWatch
+      - Shared
+    dependencies:
+      - target: PRWatchWidget
+    entitlements:
+      path: PRWatch/PRWatch.entitlements
+      properties:
+        # Not sandboxed: the app runs `gh auth token` to borrow the gh CLI's token. The App Group
+        # holds the per-repository cache the widget reads and writes; the keychain access group
+        # holds the GitHub token both read. Both ids are Team-ID-prefixed on purpose (see README).
+        com.apple.security.application-groups:
+          - R9KR5T3WZB.com.jashvantsewmangal.prwatch
+        keychain-access-groups:
+          - R9KR5T3WZB.com.jashvantsewmangal.prwatch
+    info:
+      path: PRWatch/Info.plist
+      properties:
+        CFBundleDisplayName: PR Watch
+        CFBundleName: PR Watch
+        LSMinimumSystemVersion: "14.0"
+        NSHumanReadableCopyright: ""
+        CFBundleURLTypes:
+          - CFBundleURLName: com.jashvantsewmangal.prwatch
+            CFBundleURLSchemes:
+              - prwatch
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.jashvantsewmangal.prwatch
+        PRODUCT_NAME: PR Watch
+  PRWatchWidget:
+    type: app-extension
+    platform: macOS
+    sources:
+      - PRWatchWidget
+      - Shared
+    entitlements:
+      path: PRWatchWidget/PRWatchWidget.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        # The widget calls api.github.com itself.
+        com.apple.security.network.client: true
+        com.apple.security.application-groups:
+          - R9KR5T3WZB.com.jashvantsewmangal.prwatch
+        keychain-access-groups:
+          - R9KR5T3WZB.com.jashvantsewmangal.prwatch
+    info:
+      path: PRWatchWidget/Info.plist
+      properties:
+        CFBundleDisplayName: PR Watch
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.jashvantsewmangal.prwatch.widget
+        SKIP_INSTALL: YES
+schemes:
+  PRWatch:
+    build:
+      targets:
+        PRWatch: all
+    run:
+      config: Debug
