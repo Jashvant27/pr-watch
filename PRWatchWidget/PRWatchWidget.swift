@@ -248,10 +248,12 @@ struct PullsWidgetView: View {
                     .padding(.top, 1)
                 VStack(alignment: .leading, spacing: 2) {
                     HStack(spacing: 4) {
+                        // The title takes what is left, so the pills end at the same edge on every row.
                         Text(pr.title)
                             .font(.system(size: 12, weight: .semibold))
                             .lineLimit(1)
                             .truncationMode(.tail)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                         ForEach(pr.labels.prefix(3), id: \.self) { label in
                             pill(label)
                         }
