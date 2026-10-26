@@ -9,8 +9,8 @@ your browser.
 
 <img src="Design/icon-preview.png" width="128" alt="PR Watch icon">
 
-- **Widget** (Medium, Large, Extra Large): as many rows as fit the widget's height (about 3 in
-  Medium, 7 in Large, 14 in Extra Large, which uses two columns); the rest is a "+N more" link
+- **Widget** (Medium, Large, Extra Large): as many rows as fit the widget's height (2 in Medium,
+  about 6 in Large, about 12 in Extra Large, which uses two columns); the rest is a "+N more" link
   in the footer. Drafts have a grey icon and "· Draft" on the second line; a
   switch in the widget's configuration leaves them out. The header (repository name, "Open N")
   opens the repository's pull requests page.

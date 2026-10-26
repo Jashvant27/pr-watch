@@ -172,7 +172,7 @@ struct ContentView: View {
             }
             VStack(alignment: .leading, spacing: 6) {
                 Text("Add a widget").font(.subheadline.weight(.semibold))
-                Text("1. Click the desktop (or the clock in the menu bar) and choose Edit Widgets.\n2. Search for PR Watch and drag out a size: Medium shows about 3 pull requests, Large about 7, Extra Large about 14.\n3. Right-click the widget → Edit Widget, paste the repository (owner/name or its GitHub link) and press Done.\n\nEvery widget refreshes about every hour; the ↻ in its footer refreshes it now. Click a pull request to open it in your browser.")
+                Text("1. Click the desktop (or the clock in the menu bar) and choose Edit Widgets.\n2. Search for PR Watch and drag out a size: Medium shows 2 pull requests, Large about 6, Extra Large about 12.\n3. Right-click the widget → Edit Widget, paste the repository (owner/name or its GitHub link) and press Done.\n\nEvery widget refreshes about every hour; the ↻ in its footer refreshes it now. Click a pull request to open it in your browser.")
                     .font(.callout)
                     .foregroundStyle(.secondary)
             }

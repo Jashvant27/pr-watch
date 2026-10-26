@@ -147,17 +147,17 @@ struct PullsWidgetView: View {
     @Environment(\.widgetFamily) private var family
 
     private let openGreen = Color(red: 0.25, green: 0.69, blue: 0.31)
-    private var rowHeight: CGFloat { family == .systemMedium ? 30 : 36 }
+    private var rowHeight: CGFloat { family == .systemMedium ? 36 : 40 }
     private var columns: Int { family == .systemExtraLarge ? 2 : 1 }
     /// Header, footer, the two gaps between them and the rows, and a little slack; what is
     /// left of the widget's height is the row budget.
-    private var fixedHeight: CGFloat { 16 + 16 + 6 + 2 + (entry.debug != nil ? 22 : 0) }
+    private var fixedHeight: CGFloat { 16 + 16 + 12 + 2 + (entry.debug != nil ? 22 : 0) }
 
     var body: some View {
         GeometryReader { geo in
             let perColumn = max(1, Int((geo.size.height - fixedHeight) / rowHeight))
             let shown = Array(entry.pulls.prefix(perColumn * columns))
-            VStack(alignment: .leading, spacing: 3) {
+            VStack(alignment: .leading, spacing: 6) {
                 header
                 content(shown)
                 Spacer(minLength: 0)
@@ -275,6 +275,7 @@ struct PullsWidgetView: View {
                     .padding(.top, 2)
                 }
             }
+            .padding(.vertical, 3)
             .frame(height: rowHeight)
             .overlay(alignment: .bottom) {
                 if divider { Divider().opacity(0.5) }
