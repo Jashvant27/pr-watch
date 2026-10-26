@@ -147,14 +147,22 @@ struct PullsWidgetView: View {
     @Environment(\.widgetFamily) private var family
 
     private let openGreen = Color(red: 0.25, green: 0.69, blue: 0.31)
-    private var rowHeight: CGFloat { family == .systemMedium ? 34 : 38 }
+    private var rowHeight: CGFloat { family == .systemMedium ? 30 : 36 }
     private var columns: Int { family == .systemExtraLarge ? 2 : 1 }
+    /// Header, footer, the two gaps between them and the rows, and a little slack; what is
+    /// left of the widget's height is the row budget.
+    private var fixedHeight: CGFloat { 16 + 16 + 6 + 2 + (entry.debug != nil ? 22 : 0) }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            header
-            content
-            footer
+        GeometryReader { geo in
+            let perColumn = max(1, Int((geo.size.height - fixedHeight) / rowHeight))
+            let shown = Array(entry.pulls.prefix(perColumn * columns))
+            VStack(alignment: .leading, spacing: 3) {
+                header
+                content(shown)
+                Spacer(minLength: 0)
+                footer(hidden: entry.pulls.count - shown.count)
+            }
         }
         .containerBackground(for: .widget) {
             Color(nsColor: .windowBackgroundColor)
@@ -200,7 +208,7 @@ struct PullsWidgetView: View {
     // MARK: Rows
 
     @ViewBuilder
-    private var content: some View {
+    private func content(_ shown: [PullRequest]) -> some View {
         if entry.repo == nil {
             message(systemImage: "slider.horizontal.3",
                     entry.configuredText.trimmingCharacters(in: .whitespaces).isEmpty
@@ -214,42 +222,23 @@ struct PullsWidgetView: View {
         } else if entry.pulls.isEmpty {
             message(systemImage: "checkmark.circle", "No open pull requests", detail: nil)
         } else {
-            GeometryReader { geo in
-                let perColumn = max(1, Int(geo.size.height / rowHeight))
-                let capacity = perColumn * columns
-                let cut = entry.pulls.count > capacity
-                let shown = Array(entry.pulls.prefix(cut ? capacity - 1 : capacity))
-                let perColumnShown = Int(ceil(Double(shown.count + (cut ? 1 : 0)) / Double(columns)))
-                HStack(alignment: .top, spacing: 12) {
-                    ForEach(0..<columns, id: \.self) { column in
-                        let start = column * perColumnShown
-                        let end = min(shown.count, start + perColumnShown)
-                        VStack(alignment: .leading, spacing: 0) {
-                            if start < end {
-                                ForEach(shown[start..<end]) { pr in
-                                    row(pr)
-                                    if pr.id != shown[end - 1].id || (cut && column == columns - 1) { Divider().opacity(0.5) }
-                                }
-                            }
-                            if cut, column == columns - 1, let repo = entry.repo {
-                                Link(destination: Self.openURL(repo.pullsURL)) {
-                                    Text("+\(entry.pulls.count - shown.count) more")
-                                        .font(.system(size: 10, weight: .medium))
-                                        .foregroundStyle(.secondary)
-                                        .frame(maxWidth: .infinity, alignment: .leading)
-                                        .padding(.vertical, 6)
-                                }
-                            }
-                            Spacer(minLength: 0)
+            let perColumnShown = Int(ceil(Double(shown.count) / Double(columns)))
+            HStack(alignment: .top, spacing: 12) {
+                ForEach(0..<columns, id: \.self) { column in
+                    let start = min(shown.count, column * perColumnShown)
+                    let end = min(shown.count, start + perColumnShown)
+                    VStack(alignment: .leading, spacing: 0) {
+                        ForEach(shown[start..<end]) { pr in
+                            row(pr, divider: pr.id != shown[end - 1].id)
                         }
-                        .frame(maxWidth: .infinity)
                     }
+                    .frame(maxWidth: .infinity, alignment: .top)
                 }
             }
         }
     }
 
-    private func row(_ pr: PullRequest) -> some View {
+    private func row(_ pr: PullRequest, divider: Bool) -> some View {
         Link(destination: Self.openURL(pr.htmlURL)) {
             HStack(alignment: .top, spacing: 6) {
                 Image(systemName: "arrow.triangle.pull")
@@ -286,8 +275,10 @@ struct PullsWidgetView: View {
                     .padding(.top, 2)
                 }
             }
-            .padding(.vertical, family == .systemMedium ? 3 : 5)
             .frame(height: rowHeight)
+            .overlay(alignment: .bottom) {
+                if divider { Divider().opacity(0.5) }
+            }
             .contentShape(Rectangle())
         }
     }
@@ -326,12 +317,21 @@ struct PullsWidgetView: View {
 
     // MARK: Footer
 
-    private var footer: some View {
+    /// "+N more" (a link to the pull requests page) for the rows that did not fit, the last
+    /// problem, "Last synced at …" and the ↻.
+    private func footer(hidden: Int) -> some View {
         VStack(alignment: .leading, spacing: 2) {
             if let debug = entry.debug {
                 Text(debug).font(.system(size: 8)).foregroundStyle(.secondary).lineLimit(2)
             }
             HStack(spacing: 5) {
+                if hidden > 0, let repo = entry.repo {
+                    Link(destination: Self.openURL(repo.pullsURL)) {
+                        Text("+\(hidden) more")
+                            .font(.system(size: 10, weight: .medium))
+                            .foregroundStyle(.secondary)
+                    }
+                }
                 if let problem = entry.problem, entry.fetchedAt != nil {
                     Image(systemName: "exclamationmark.triangle.fill").font(.system(size: 8)).foregroundStyle(.orange)
                     Text(problem).font(.system(size: 9)).foregroundStyle(.orange).lineLimit(1)

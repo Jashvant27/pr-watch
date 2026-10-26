@@ -9,8 +9,9 @@ your browser.
 
 <img src="Design/icon-preview.png" width="128" alt="PR Watch icon">
 
-- **Widget** (Medium, Large, Extra Large): Medium shows 3 pull requests, Large 6, Extra Large 12
-  in two columns, then "+N more". Drafts have a grey icon and "· Draft" on the second line; a
+- **Widget** (Medium, Large, Extra Large): as many rows as fit the widget's height (about 3 in
+  Medium, 7 in Large, 14 in Extra Large, which uses two columns); the rest is a "+N more" link
+  in the footer. Drafts have a grey icon and "· Draft" on the second line; a
   switch in the widget's configuration leaves them out. The header (repository name, "Open N")
   opens the repository's pull requests page.
 - **App** (SwiftUI, macOS 14 or later): one window to sign in (paste a token, or borrow the
