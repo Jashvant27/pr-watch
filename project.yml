@@ -72,6 +72,11 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.jashvantsewmangal.prwatch.widget
         SKIP_INSTALL: YES
+        # No debug dylib for the extension: with it, an incremental build that follows one made by
+        # the other tool (Xcode after xcodebuild or the reverse) skips the App Intents metadata
+        # ("no AppIntents.framework dependency found"), and the widget then keeps its old render
+        # and its ↻ does nothing.
+        ENABLE_DEBUG_DYLIB: NO
 schemes:
   PRWatch:
     build:

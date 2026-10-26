@@ -269,6 +269,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = PRWatchWidget/PRWatchWidget.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_DEBUG_DYLIB = NO;
 				INFOPLIST_FILE = PRWatchWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -430,6 +431,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = PRWatchWidget/PRWatchWidget.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_DEBUG_DYLIB = NO;
 				INFOPLIST_FILE = PRWatchWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

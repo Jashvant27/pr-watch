@@ -172,12 +172,14 @@ This is what makes the widget useful next to an AI coding agent: tell it to run
   `killall chronod`. "Not signed in" on a widget right after signing in means the widget process
   has not been relaunched yet: Refresh all widgets does that. After a new Run from Xcode the
   widgets keep the old extension until they are relaunched the same way.
-- **↻ does nothing and the widget keeps an old look after a command-line build.** An incremental
-  `xcodebuild` can leave the extension without its `Contents/Resources/Metadata.appintents`
-  (the App Intents metadata that `Button(intent:)` and the configuration intent need); WidgetKit
-  then cannot ask the widget for a new timeline and keeps the last archived render. Check with
-  `ls "…/PR Watch.app/Contents/PlugIns/PRWatchWidget.appex/Contents/Resources"`; if the folder is
-  missing, build once more (or `xcodebuild clean` first) and `killall chronod`.
+- **↻ does nothing and the widget keeps an old look after a build.** The extension needs its
+  `Contents/Resources/Metadata.appintents` (the App Intents metadata behind `Button(intent:)` and
+  the configuration intent); without it every render fails with "Unable to get LNAction from
+  intent" and WidgetKit keeps the last archived one. With Xcode's debug dylib on, an incremental
+  build that follows one made by the other tool (Xcode after `xcodebuild`, or the reverse)
+  skipped that metadata ("no AppIntents.framework dependency found"), so the widget target sets
+  `ENABLE_DEBUG_DYLIB: NO`. If it ever happens again: `xcodebuild … clean build`, check the folder
+  exists, `killall chronod`.
 - **Keychain prompts.** The data-protection keychain never prompts; if "Keychain: …" appears in
   the app or the widget's diagnostics, the signature lost the keychain access group (quit a running
   copy of the app before the next Run: a running process keeps its old entitlements).
